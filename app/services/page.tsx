@@ -1,7 +1,11 @@
-import { Helmet } from "react-helmet-async";
-import { Layout } from "@/components/layout/Layout";
+"use client";
+
+import Image from "next/image";
+
+export const dynamic = 'force-dynamic';
+
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { 
   Bone, Activity, Car, Dumbbell, UserCheck, 
@@ -179,21 +183,14 @@ const services = [
   },
 ];
 
-const Services = () => {
+export default function ServicesPage() {
   return (
     <>
-      <Helmet>
-        <title>Chiropractic Services | Village Chiropractic Stone Mountain, GA</title>
-        <meta
-          name="description"
-          content="Comprehensive chiropractic services in Stone Mountain, GA including adjustments, back pain relief, auto injury care, sports injuries, brain injury care, joint repair, impairment ratings, and posture correction."
-        />
-      </Helmet>
-      <Layout>
+            
         {/* Hero */}
         <section className="relative py-24 overflow-hidden">
           <div className="absolute inset-0">
-            <img src="/assets/hero-chiropractic.jpg" alt="" className="w-full h-full object-cover" />
+            <Image src="/assets/hero-chiropractic.jpg" alt="" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-sage-dark/90" />
           </div>
           <div className="container relative z-10">
@@ -279,7 +276,7 @@ const Services = () => {
                           </ul>
                         </div>
 
-                        <Link to="/contact">
+                        <Link href="/contact">
                           <Button variant="default" size="lg" className="w-full mt-4">
                             <Calendar className="h-4 w-4" />
                             Schedule for {service.title}
@@ -313,7 +310,7 @@ const Services = () => {
               <p className="text-primary-foreground/90 text-lg mb-8 max-w-2xl mx-auto">
                 Schedule a consultation and let us help you determine the best approach for your unique situation.
               </p>
-              <Link to="/contact">
+              <Link href="/contact">
                 <Button variant="hero" size="xl" className="bg-primary-foreground text-primary hover:bg-primary-foreground/90">
                   <Calendar className="h-5 w-5" />
                   Book a Consultation
@@ -322,9 +319,9 @@ const Services = () => {
             </motion.div>
           </div>
         </section>
-      </Layout>
+      
     </>
   );
 };
 
-export default Services;
+

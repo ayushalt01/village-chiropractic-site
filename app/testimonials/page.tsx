@@ -1,7 +1,11 @@
-import { Helmet } from "react-helmet-async";
-import { Layout } from "@/components/layout/Layout";
+"use client";
+
+import Image from "next/image";
+
+export const dynamic = 'force-dynamic';
+
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Star, Quote, Calendar } from "lucide-react";
 
@@ -64,21 +68,14 @@ const testimonials = [
   },
 ];
 
-const Testimonials = () => {
+export default function TestimonialsPage() {
   return (
     <>
-      <Helmet>
-        <title>Patient Testimonials | Village Chiropractic Stone Mountain, GA</title>
-        <meta
-          name="description"
-          content="Read what our patients say about their experience at Village Chiropractic in Stone Mountain, GA. Real stories of pain relief and improved quality of life."
-        />
-      </Helmet>
-      <Layout>
+            
         {/* Hero */}
         <section className="relative py-24 overflow-hidden">
           <div className="absolute inset-0">
-            <img src="/assets/hero-chiropractic.jpg" alt="" className="w-full h-full object-cover" />
+            <Image src="/assets/hero-chiropractic.jpg" alt="" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-sage-dark/90" />
           </div>
           <div className="container relative z-10">
@@ -153,7 +150,7 @@ const Testimonials = () => {
               <p className="text-primary-foreground/90 text-lg mb-8 max-w-2xl mx-auto">
                 Join the hundreds of satisfied patients who have found relief at Village Chiropractic.
               </p>
-              <Link to="/contact">
+              <Link href="/contact">
                 <Button variant="hero" size="xl" className="bg-primary-foreground text-primary hover:bg-primary-foreground/90">
                   <Calendar className="h-5 w-5" />
                   Start Your Journey Today
@@ -162,9 +159,9 @@ const Testimonials = () => {
             </motion.div>
           </div>
         </section>
-      </Layout>
+      
     </>
   );
 };
 
-export default Testimonials;
+

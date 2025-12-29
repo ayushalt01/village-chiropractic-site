@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Activity, Bone, Car, Dumbbell, UserCheck } from "lucide-react";
 
@@ -67,7 +67,7 @@ export function ServicesSection() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <Link
-                to={service.href}
+                href={service.href}
                 className="group block bg-card rounded-2xl p-8 shadow-soft hover:shadow-card border border-border/50 hover:border-primary/30 transition-all duration-300 h-full"
               >
                 <div className="h-12 w-12 rounded-xl bg-sage-light flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
@@ -94,7 +94,7 @@ export function ServicesSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <Link to="/services">
+          <Link href="/services">
             <Button variant="default" size="lg">
               View All Services
               <ArrowRight className="h-4 w-4" />

@@ -1,5 +1,8 @@
-import { Helmet } from "react-helmet-async";
-import { Layout } from "@/components/layout/Layout";
+"use client";
+
+export const dynamic = 'force-dynamic';
+
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -11,7 +14,7 @@ import {
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
-const Contact = () => {
+export default function ContactPage() {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
@@ -46,18 +49,17 @@ const Contact = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Contact Us | Village Chiropractic Stone Mountain, GA</title>
-        <meta
-          name="description"
-          content="Book your appointment at Village Chiropractic in Stone Mountain, GA. Call (770) 469-7330 or use our online form. Convenient hours and location."
-        />
-      </Helmet>
-      <Layout>
+            
         {/* Hero */}
         <section className="relative py-24 overflow-hidden">
           <div className="absolute inset-0">
-            <img src="/assets/hero-chiropractic.jpg" alt="" className="w-full h-full object-cover" />
+            <Image 
+              src="/assets/hero-chiropractic.jpg" 
+              alt="" 
+              fill
+              className="object-cover"
+              priority
+            />
             <div className="absolute inset-0 bg-sage-dark/90" />
           </div>
           <div className="container relative z-10">
@@ -307,10 +309,12 @@ const Contact = () => {
                   Last walk-in appointment is 30 minutes before we close.
                 </p>
               </div>
-              <div className="rounded-2xl overflow-hidden shadow-elevated">
-                <img
+              <div className="rounded-2xl overflow-hidden shadow-elevated relative w-full h-auto">
+                <Image
                   src="/walk-in-hours.jpg"
                   alt="Walk-in Hours: Monday-Friday 9-7, Saturday 9-12. Transportation available. Dr. Christopher Connelly, DC - Mon, Tue, & Wed, Some Thur & Fridays. Dr. Ashley Dumas, DC - Thurs, Fri & Sat"
+                  width={1200}
+                  height={800}
                   className="w-full h-auto"
                 />
               </div>
@@ -331,9 +335,9 @@ const Contact = () => {
             title="Village Chiropractic location in Stone Mountain, GA"
           />
         </section>
-      </Layout>
+      
     </>
   );
 };
 
-export default Contact;
+

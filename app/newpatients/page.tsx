@@ -1,7 +1,11 @@
-import { Helmet } from "react-helmet-async";
-import { Layout } from "@/components/layout/Layout";
+"use client";
+
+import Image from "next/image";
+
+export const dynamic = 'force-dynamic';
+
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { 
   Calendar, FileText, CheckCircle, Clock, 
@@ -71,21 +75,14 @@ const faqs = [
   },
 ];
 
-const NewPatients = () => {
+export default function NewPatientsPage() {
   return (
     <>
-      <Helmet>
-        <title>New Patients | Village Chiropractic Stone Mountain, GA</title>
-        <meta
-          name="description"
-          content="What to expect on your first visit to Village Chiropractic in Stone Mountain, GA. Learn about our process, insurance options, and frequently asked questions."
-        />
-      </Helmet>
-      <Layout>
+            
         {/* Hero */}
         <section className="relative py-24 overflow-hidden">
           <div className="absolute inset-0">
-            <img src="/assets/hero-chiropractic.jpg" alt="" className="w-full h-full object-cover" />
+            <Image src="/assets/hero-chiropractic.jpg" alt="" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-sage-dark/90" />
           </div>
           <div className="container relative z-10">
@@ -236,7 +233,7 @@ const NewPatients = () => {
                 <Clock className="h-4 w-4" />
                 <span>Initial visit: 45-60 minutes</span>
               </div>
-              <Link to="/contact">
+              <Link href="/contact">
                 <Button variant="hero" size="xl">
                   <Calendar className="h-5 w-5" />
                   Schedule Your Visit
@@ -299,7 +296,7 @@ const NewPatients = () => {
                 We're here to help! Give us a call or schedule a consultation to discuss your health concerns.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <Link to="/contact">
+                <Link href="/contact">
                   <Button variant="hero" size="xl" className="bg-primary-foreground text-primary hover:bg-primary-foreground/90">
                     <Calendar className="h-5 w-5" />
                     Book Appointment
@@ -314,9 +311,9 @@ const NewPatients = () => {
             </motion.div>
           </div>
         </section>
-      </Layout>
+      
     </>
   );
 };
 
-export default NewPatients;
+

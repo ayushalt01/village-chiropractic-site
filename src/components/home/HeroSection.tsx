@@ -1,5 +1,6 @@
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Phone, Calendar, CheckCircle, ArrowRight } from "lucide-react";
 
@@ -14,10 +15,12 @@ export function HeroSection() {
     <section className="relative min-h-[90vh] flex items-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
-        <img
+        <Image
           src="/assets/hero-chiropractic.jpg"
           alt="Welcoming chiropractic clinic interior with professional care"
-          className="w-full h-full object-cover"
+          fill
+          className="object-cover"
+          priority
         />
         <div className="absolute inset-0 bg-gradient-to-r from-sage-dark/95 via-sage-dark/80 to-sage-dark/40" />
       </div>
@@ -63,7 +66,7 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <Link to="/contact">
+            <Link href="/contact">
               <Button variant="hero" size="xl">
                 <Calendar className="h-5 w-5" />
                 Book Appointment

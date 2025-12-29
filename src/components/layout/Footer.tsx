@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Phone, MapPin, Mail, Clock, Facebook, Instagram, ChevronRight } from "lucide-react";
 
 const navigation = {
@@ -26,7 +26,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="space-y-6">
-            <Link to="/" className="flex items-center gap-3">
+            <Link href="/" className="flex items-center gap-3">
               <div className="h-12 w-12 rounded-full bg-primary-foreground/20 flex items-center justify-center">
                 <span className="text-primary-foreground font-display text-xl font-bold">VC</span>
               </div>
@@ -61,7 +61,7 @@ export function Footer() {
               {navigation.main.map((item) => (
                 <li key={item.name}>
                   <Link
-                    to={item.href}
+                    href={item.href}
                     className="text-primary-foreground/80 hover:text-primary-foreground flex items-center gap-2 transition-colors"
                   >
                     <ChevronRight className="h-4 w-4" />
@@ -79,7 +79,7 @@ export function Footer() {
               {navigation.services.map((item) => (
                 <li key={item.name}>
                   <Link
-                    to={item.href}
+                    href={item.href}
                     className="text-primary-foreground/80 hover:text-primary-foreground flex items-center gap-2 transition-colors"
                   >
                     <ChevronRight className="h-4 w-4" />
@@ -135,8 +135,8 @@ export function Footer() {
         <div className="container py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-primary-foreground/70">
           <p>© {new Date().getFullYear()} Village Chiropractic. All rights reserved.</p>
           <div className="flex gap-6">
-            <Link to="/privacy" className="hover:text-primary-foreground transition-colors">Privacy Policy</Link>
-            <Link to="/terms" className="hover:text-primary-foreground transition-colors">Terms of Service</Link>
+            <Link href="/privacy" className="hover:text-primary-foreground transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-primary-foreground transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>

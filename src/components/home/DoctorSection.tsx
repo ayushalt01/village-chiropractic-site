@@ -1,5 +1,6 @@
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 export function DoctorSection() {
@@ -19,11 +20,12 @@ export function DoctorSection() {
         }}>
             <div className="grid grid-cols-2 gap-4">
               {/* Dr. Connelly */}
-              <div className="relative rounded-2xl overflow-hidden shadow-elevated">
-                <img 
+              <div className="relative rounded-2xl overflow-hidden shadow-elevated h-[500px]">
+                <Image 
                   alt="Dr. Christopher Connelly, DC" 
-                  className="w-full h-[500px] object-cover" 
-                  src="/lovable-uploads/bcd3ea44-3c33-45bd-81c9-850088b81aeb.jpg" 
+                  className="object-cover" 
+                  src="/lovable-uploads/bcd3ea44-3c33-45bd-81c9-850088b81aeb.jpg"
+                  fill
                 />
                 <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-sage-dark/90 to-transparent p-6">
                   <h3 className="font-display text-xl font-bold text-primary-foreground">Dr. Christopher Connelly, DC</h3>
@@ -32,11 +34,12 @@ export function DoctorSection() {
               </div>
               
               {/* Dr. Dumas */}
-              <div className="relative rounded-2xl overflow-hidden shadow-elevated">
-                <img 
+              <div className="relative rounded-2xl overflow-hidden shadow-elevated h-[500px]">
+                <Image 
                   alt="Dr. Ashley Dumas, DC" 
-                  className="w-full h-[500px] object-cover" 
-                  src="/assets/dr-dumas.jpg" 
+                  className="object-cover" 
+                  src="/assets/dr-dumas.jpg"
+                  fill
                 />
                 <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-sage-dark/90 to-transparent p-6">
                   <h3 className="font-display text-xl font-bold text-primary-foreground">Dr. Ashley Dumas, DC</h3>
@@ -70,12 +73,12 @@ export function DoctorSection() {
               <p>Whether you're dealing with chronic back pain, recovering from an injury, or looking to maintain your health proactively, our doctors take the time to understand your unique situation and create a treatment plan that works for your life.</p>
             </div>
             <div className="flex flex-wrap gap-4">
-              <Link to="/about">
+              <Link href="/about">
                 <Button variant="default" size="lg">
                   Learn More About Us
                 </Button>
               </Link>
-              <Link to="/contact">
+              <Link href="/contact">
                 <Button variant="outline" size="lg">
                   Schedule a Consultation
                 </Button>

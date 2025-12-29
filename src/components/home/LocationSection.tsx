@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { MapPin, Phone, Calendar } from "lucide-react";
 
@@ -45,7 +45,7 @@ export function LocationSection() {
               </div>
             </div>
 
-            <Link to="/contact">
+            <Link href="/contact">
               <Button variant="hero" size="xl">
                 <Calendar className="h-5 w-5" />
                 Schedule Your Visit Today

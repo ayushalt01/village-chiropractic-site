@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Star, Quote, ArrowRight } from "lucide-react";
 
@@ -79,7 +79,7 @@ export function TestimonialsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
-          <Link to="/testimonials">
+          <Link href="/testimonials">
             <Button variant="outline" size="lg">
               Read More Reviews
               <ArrowRight className="h-4 w-4" />
