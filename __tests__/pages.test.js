@@ -53,7 +53,7 @@ describe('Page Build Verification', () => {
       '/about',
       '/contact',
       '/services',
-      '/new-patients',
+      '/newpatients',
       '/testimonials',
     ];
 
