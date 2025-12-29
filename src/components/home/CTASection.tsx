@@ -2,14 +2,13 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Calendar, Phone } from "lucide-react";
-import wellnessBg from "@/assets/wellness-bg.jpg";
 
 export function CTASection() {
   return (
     <section className="relative py-24 overflow-hidden">
       <div className="absolute inset-0">
         <img
-          src={wellnessBg}
+          src="/assets/wellness-bg.jpg"
           alt=""
           className="w-full h-full object-cover"
         />

@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Phone, Calendar, CheckCircle, ArrowRight } from "lucide-react";
-import heroImage from "@/assets/hero-chiropractic.jpg";
 
 const benefits = [
   "Natural Pain Relief",
@@ -16,7 +15,7 @@ export function HeroSection() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src={heroImage}
+          src="/assets/hero-chiropractic.jpg"
           alt="Welcoming chiropractic clinic interior with professional care"
           className="w-full h-full object-cover"
         />

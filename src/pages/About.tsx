@@ -4,8 +4,6 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Award, Heart, Users, GraduationCap, Calendar } from "lucide-react";
-import gcaMagazineCover from "@/assets/gca-magazine-cover.jpg";
-import heroImage from "@/assets/hero-chiropractic.jpg";
 
 const values = [
   {
@@ -44,7 +42,7 @@ const About = () => {
         {/* Hero */}
         <section className="relative py-24 overflow-hidden">
           <div className="absolute inset-0">
-            <img src={heroImage} alt="" className="w-full h-full object-cover" />
+            <img src="/assets/hero-chiropractic.jpg" alt="" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-sage-dark/90" />
           </div>
           <div className="container relative z-10">
@@ -109,7 +107,7 @@ const About = () => {
               >
                 <div className="rounded-2xl overflow-hidden shadow-elevated bg-background">
                   <img
-                    src={gcaMagazineCover}
+                    src="/assets/gca-magazine-cover.jpg"
                     alt="Dr. Christopher Connelly - 2019 GCA Georgia Chiropractor of the Year - The Georgia Chiropractor Magazine Winter 2020"
                     className="w-full h-[450px] object-contain"
                   />

@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Star, Quote, Calendar } from "lucide-react";
-import heroImage from "@/assets/hero-chiropractic.jpg";
 
 const testimonials = [
   {
@@ -79,7 +78,7 @@ const Testimonials = () => {
         {/* Hero */}
         <section className="relative py-24 overflow-hidden">
           <div className="absolute inset-0">
-            <img src={heroImage} alt="" className="w-full h-full object-cover" />
+            <img src="/assets/hero-chiropractic.jpg" alt="" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-sage-dark/90" />
           </div>
           <div className="container relative z-10">

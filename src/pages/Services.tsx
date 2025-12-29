@@ -5,9 +5,8 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { 
   Bone, Activity, Car, Dumbbell, UserCheck, 
-  CheckCircle, Calendar, ArrowRight, FileText
+  CheckCircle, Calendar,   ArrowRight, FileText
 } from "lucide-react";
-import heroImage from "@/assets/hero-chiropractic.jpg";
 
 const services = [
   {
@@ -194,7 +193,7 @@ const Services = () => {
         {/* Hero */}
         <section className="relative py-24 overflow-hidden">
           <div className="absolute inset-0">
-            <img src={heroImage} alt="" className="w-full h-full object-cover" />
+            <img src="/assets/hero-chiropractic.jpg" alt="" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-sage-dark/90" />
           </div>
           <div className="container relative z-10">

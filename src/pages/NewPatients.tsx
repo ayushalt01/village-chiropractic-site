@@ -7,7 +7,6 @@ import {
   Calendar, FileText, CheckCircle, Clock, 
   HelpCircle, Shield, Sparkles 
 } from "lucide-react";
-import heroImage from "@/assets/hero-chiropractic.jpg";
 
 const firstVisitSteps = [
   {
@@ -86,7 +85,7 @@ const NewPatients = () => {
         {/* Hero */}
         <section className="relative py-24 overflow-hidden">
           <div className="absolute inset-0">
-            <img src={heroImage} alt="" className="w-full h-full object-cover" />
+            <img src="/assets/hero-chiropractic.jpg" alt="" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-sage-dark/90" />
           </div>
           <div className="container relative z-10">

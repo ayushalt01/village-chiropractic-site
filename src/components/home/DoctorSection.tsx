@@ -1,8 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import chiropractorImage from "@/assets/chiropractor-portrait.jpg";
-import drDumasImage from "@/assets/dr-dumas.jpg";
 
 export function DoctorSection() {
   return <section className="py-20 gradient-sage">
@@ -38,7 +36,7 @@ export function DoctorSection() {
                 <img 
                   alt="Dr. Ashley Dumas, DC" 
                   className="w-full h-[500px] object-cover" 
-                  src={drDumasImage} 
+                  src="/assets/dr-dumas.jpg" 
                 />
                 <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-sage-dark/90 to-transparent p-6">
                   <h3 className="font-display text-xl font-bold text-primary-foreground">Dr. Ashley Dumas, DC</h3>
