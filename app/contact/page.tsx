@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { 
   Phone, MapPin, Mail, Clock, Calendar, 
-  CheckCircle, Send 
+  CheckCircle, Send, Facebook, Instagram
 } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
@@ -299,6 +299,37 @@ export default function ContactPage() {
                           <p>Sunday: Closed</p>
                         </div>
                         <p className="text-sm text-muted-foreground mt-2">We see the last patient 30 minutes before we close. Please call ahead if you are a new patient.</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-4">
+                      <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                        <Facebook className="h-6 w-6 text-primary" />
+                      </div>
+                      <div>
+                        <p className="font-semibold text-foreground mb-2">Follow Us</p>
+                        <div className="flex flex-col gap-2">
+                          <a
+                            href="https://www.facebook.com/StoneMountainBackandNeckPainReliefClinic/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 text-primary hover:underline"
+                            aria-label="Visit our Facebook page"
+                          >
+                            <Facebook className="h-5 w-5" />
+                            <span className="text-sm">Facebook</span>
+                          </a>
+                          <a
+                            href="https://www.instagram.com/doctorchrisconnelly/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 text-primary hover:underline"
+                            aria-label="Visit our Instagram page"
+                          >
+                            <Instagram className="h-5 w-5" />
+                            <span className="text-sm">Instagram</span>
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>
