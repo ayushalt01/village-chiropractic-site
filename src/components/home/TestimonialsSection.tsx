@@ -1,9 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Star, Quote, ArrowRight } from "lucide-react";
+import { Star, Quote } from "lucide-react";
+import { GoogleReviewsWidget } from "./GoogleReviewsWidget";
 
 const testimonials = [
   {
@@ -47,7 +46,13 @@ export function TestimonialsSection() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
+        {/* Google Reviews Widget */}
+        <div className="mb-12">
+          <GoogleReviewsWidget />
+        </div>
+
+        {/* Static Testimonials Fallback */}
+        <div className="grid md:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.name}
@@ -73,21 +78,6 @@ export function TestimonialsSection() {
             </motion.div>
           ))}
         </div>
-
-        <motion.div
-          className="text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-        >
-          <Link href="/testimonials">
-            <Button variant="outline" size="lg">
-              Read More Reviews
-              <ArrowRight className="h-4 w-4" />
-            </Button>
-          </Link>
-        </motion.div>
       </div>
     </section>
   );

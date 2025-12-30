@@ -32,11 +32,6 @@ describe('Page Build Verification', () => {
     expect(fs.existsSync(newPatientsPage)).toBe(true);
   });
 
-  test('Testimonials page exists', () => {
-    const testimonialsPage = path.join(appDir, 'testimonials/page.tsx');
-    expect(fs.existsSync(testimonialsPage)).toBe(true);
-  });
-
   test('Not found page exists', () => {
     const notFoundPage = path.join(appDir, 'not-found.tsx');
     expect(fs.existsSync(notFoundPage)).toBe(true);
@@ -54,7 +49,6 @@ describe('Page Build Verification', () => {
       '/contact',
       '/services',
       '/newpatients',
-      '/testimonials',
     ];
 
     // Verify page files exist for each route

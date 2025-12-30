@@ -23,6 +23,8 @@ const playfairDisplay = Playfair_Display({
 
 export const dynamic = 'force-dynamic';
 
+const googleVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
+
 export const metadata: Metadata = {
   title: {
     default: "Pain Atlanta | Chiropractor in Stone Mountain, GA",
@@ -63,6 +65,11 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  ...(googleVerification && {
+    verification: {
+      google: googleVerification,
+    },
+  }),
 };
 
 export default function RootLayout({

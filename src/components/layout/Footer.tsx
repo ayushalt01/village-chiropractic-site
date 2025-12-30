@@ -7,7 +7,6 @@ const navigation = {
     { name: "About Us", href: "/about" },
     { name: "Services", href: "/services" },
     { name: "New Patients", href: "/newpatients" },
-    { name: "Testimonials", href: "/testimonials" },
     { name: "Contact", href: "/contact" },
   ],
   services: [
