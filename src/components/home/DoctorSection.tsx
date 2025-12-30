@@ -34,7 +34,7 @@ export function DoctorSection() {
               </div>
               
               {/* Dr. Dumas */}
-              <div className="relative rounded-2xl overflow-hidden shadow-elevated">
+            <div className="relative rounded-2xl overflow-hidden shadow-elevated">
                 <img 
                   alt="Dr. Ashley Dumas, DC" 
                   className="w-full h-[500px] object-cover" 

@@ -5,21 +5,21 @@ import { Star, Quote, ArrowRight } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Sarah M.",
-    location: "Stone Mountain",
-    text: "After years of chronic back pain, I finally found relief at Village Chiropractic. Dr. Connelly took the time to understand my issues and created a plan that actually worked. I can finally play with my kids again!",
+    name: "Aniece P.",
+    location: "Stone Mountain, GA",
+    text: "Dr. Connelly, Dr. Dumas, and the wonderful staff - hats off to all of you! My total experience has been wonderful, and I highly recommend this facility for excellent care. This is the place!",
     rating: 5,
   },
   {
-    name: "James T.",
-    location: "Decatur",
-    text: "I was in a car accident and was referred to Village Chiropractic. The staff was so caring and professional. They helped me through the entire recovery process and even handled the insurance paperwork.",
+    name: "Netasha",
+    location: "Stone Mountain, GA",
+    text: "Great first visit! Dr. Connelly and his staff are amazing. The treatment and adjustments were right on point, and they took the time to listen to my concerns without rushing me.",
     rating: 5,
   },
   {
-    name: "Linda K.",
-    location: "Stone Mountain",
-    text: "As a senior, I was hesitant about chiropractic care, but the doctors use such gentle techniques. I feel more mobile and have less stiffness than I have in years. Highly recommend!",
+    name: "Yvette P.",
+    location: "Stone Mountain, GA",
+    text: "I highly recommend Village Chiropractor for great care from head to toe. Both doctors are great, and the staff is wonderful too, especially Amanda and Sherri. You will definitely not regret it!",
     rating: 5,
   },
 ];

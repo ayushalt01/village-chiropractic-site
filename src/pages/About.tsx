@@ -142,7 +142,7 @@ const About = () => {
                     patients overcome pain and achieve optimal health through natural, drug-free solutions. 
                     He specializes in spinal correction, sports injuries, auto accidents, brain injury, 
                     impairment ratings, and wellness care for patients of all ages.
-                  </p>
+                </p>
                   <p className="mt-2">
                     <strong>Available:</strong> Monday, Tuesday, Wednesday, and some Thursdays & Fridays
                   </p>
