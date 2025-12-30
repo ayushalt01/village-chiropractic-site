@@ -24,7 +24,7 @@ const services = [
   {
     id: "auto-injury",
     icon: Car,
-    title: "Auto Injury & Whiplash Care",
+    title: "Auto Injury Care",
     shortDesc: "Same-day appointments and documentation support after a collision.",
     forWho:
       "Anyone involved in an auto accident, even if symptoms haven't appeared yet.",
@@ -35,7 +35,7 @@ const services = [
       "Hidden injuries that may develop later",
     ],
     expect:
-      "We document your injuries for med pay, 3rd party, WC insurance, or attorney cases and create a care plan so acute pain doesn’t become chronic. Gentle adjustments, rehab exercises, and imaging when needed.",
+      "We document your injuries for med pay, 3rd party, WC insurance, or attorney cases and create a care plan so acute pain doesn't become chronic. Gentle adjustments, rehab exercises, and imaging when needed.",
     benefits: [
       "Proper injury documentation",
       "Reduced risk of chronic pain",
@@ -70,8 +70,8 @@ const services = [
   {
     id: "joint-repair",
     icon: Bone,
-    title: "Joint Repair & Regeneration",
-    shortDesc: "Joint damage explained with options for tissue healing and relief.",
+    title: "Joint Repair",
+    shortDesc: "Joint regeneration and X-ray services for joint damage and healing.",
     forWho:
       "Patients with joint damage from trauma, arthritis, or degeneration who want better function.",
     problems: [
@@ -91,41 +91,19 @@ const services = [
     ],
   },
   {
-    id: "brain-injury",
-    icon: Activity,
-    title: "Brain Injury & Concussion Care",
-    shortDesc: "Seminar-backed approach to headaches, concussion, and chronic pain.",
-    forWho:
-      "Anyone who has experienced a head injury, concussion, or trauma affecting brain function.",
-    problems: [
-      "Concussion symptoms and fogginess",
-      "Post-traumatic headaches",
-      "Cognitive or balance difficulties after injury",
-      "Chronic pain following brain injury",
-    ],
-    expect:
-      "Comprehensive evaluation with strategies discussed in our 2024 brain injury seminar. Focus on symptom relief, balance, and long-term recovery while coordinating care as needed.",
-    benefits: [
-      "Improved cognitive function",
-      "Reduced headache frequency",
-      "Better balance and coordination",
-      "Enhanced recovery outcomes",
-      "Complete injury documentation",
-    ],
-  },
-  {
-    id: "impairment-ratings",
+    id: "injury-disability",
     icon: FileText,
-    title: "Impairment & Disability Ratings",
+    title: "Injury Disability",
     shortDesc:
-      "Expert services for impairment ratings, injury causation, and clinical exams.",
+      "Injury causation, expert services, and clinical services for legal and insurance needs.",
     forWho:
-      "Patients needing impairment ratings, disability exams, or expert documentation for legal or insurance needs.",
+      "Patients needing impairment ratings, disability exams, injury causation analysis, or expert documentation for legal or insurance needs.",
     problems: [
       "Need for impairment rating",
       "Disability or peer review evaluation",
       "Injury causation analysis",
       "Expert testimony or documentation",
+      "Clinical services and evaluations",
     ],
     expect:
       "Appointment required with your records. No LOPs; fees based on AMA UCR. Georgia peer review compliant under O.C.G.A. § 43-9-1. We do not contract with health insurance.",
@@ -135,53 +113,6 @@ const services = [
       "Clear documentation for legal needs",
       "Honest guidance on qualification",
       "Experienced expert testimony",
-    ],
-  },
-  {
-    id: "family-care",
-    icon: UserCheck,
-    title: "Family, Pregnancy & Senior Care",
-    shortDesc:
-      "Gentle or traditional care for every life stage—kids, adults, pregnancy, and seniors.",
-    forWho:
-      "Families, expectant parents, post-surgery patients, and anyone preferring light-force adjustments.",
-    problems: [
-      "Poor posture, tech neck, and scoliosis support",
-      "Pregnancy-related discomfort",
-      "Post-surgery or post-injection stiffness",
-      "Arthritis and age-related mobility limits",
-    ],
-    expect:
-      "Options include traditional adjustments or light force using the ProAdjuster. Strengthening, stretching, nutrition, lifestyle, and healthy habit coaching to keep you active.",
-    benefits: [
-      "Care tailored to age and comfort level",
-      "Improved posture and mobility",
-      "Gentle options for those who prefer no 'cracking'",
-      "Support for healthy habits",
-      "Family-friendly scheduling",
-    ],
-  },
-  {
-    id: "pain-relief",
-    icon: Activity,
-    title: "Back, Neck, Headache & Arthritis Care",
-    shortDesc: "Relief-focused care that keeps daily life moving comfortably.",
-    forWho:
-      "Office workers, laborers, and anyone living with back pain, headaches, or arthritis.",
-    problems: [
-      "Chronic or acute lower back pain",
-      "Neck pain and tension headaches",
-      "Sciatica and radiating leg pain",
-      "Arthritis and joint stiffness",
-    ],
-    expect:
-      "We identify the root cause with exam and imaging when indicated. Treatment may include adjustments, soft-tissue work, traction, laser, shockwave, and ergonomic coaching.",
-    benefits: [
-      "Significant pain reduction",
-      "Improved daily function",
-      "Less reliance on medication",
-      "Prevention of future flare-ups",
-      "Strategies to stay active",
     ],
   },
 ];
@@ -237,10 +168,10 @@ export default function ServicesPage() {
               transition={{ duration: 0.6 }}
             >
               <h1 className="font-display text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
-                Our Chiropractic Services
+                Our Services
               </h1>
               <p className="text-xl text-primary-foreground/90 leading-relaxed">
-                Comprehensive care for every stage of life. Our goal is to prevent acute pain from becoming chronic pain. From auto and sports injuries to joint repair, brain injury, and impairment ratings, we have the expertise to help you heal.
+                Comprehensive chiropractic care focused on preventing acute pain from becoming chronic pain. We offer chiropractic adjustments, back & neck pain relief, and posture correction, along with specialized services for auto injuries, sports injuries, joint repair, and injury disability evaluations.
               </p>
             </motion.div>
           </div>
@@ -249,6 +180,54 @@ export default function ServicesPage() {
         {/* Services */}
         <section className="py-20">
           <div className="container">
+            {/* Our Services Introduction */}
+            <motion.div
+              id="our-services"
+              className="scroll-mt-32 mb-20"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="max-w-4xl mx-auto text-center mb-12">
+                <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
+                  Chiropractic Adjustments, Back & Neck Pain Relief, Posture Correction
+                </h2>
+                <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+                  Our core chiropractic services focus on restoring proper alignment, relieving pain, and improving function. We use both traditional chiropractic adjustments and light-force techniques to address back pain, neck pain, and postural issues that affect your daily life.
+                </p>
+              </div>
+              <div className="grid md:grid-cols-3 gap-8">
+                <div className="bg-sage-light/30 rounded-2xl p-8">
+                  <div className="h-14 w-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
+                    <Bone className="h-7 w-7 text-primary" />
+                  </div>
+                  <h3 className="font-display text-xl font-semibold text-foreground mb-4">Chiropractic Adjustments</h3>
+                  <p className="text-muted-foreground">
+                    We offer both traditional chiropractic adjustments and light-force techniques using the ProAdjuster. Our goal is to restore proper spinal alignment and joint function, helping your body heal naturally.
+                  </p>
+                </div>
+                <div className="bg-sage-light/30 rounded-2xl p-8">
+                  <div className="h-14 w-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
+                    <Activity className="h-7 w-7 text-primary" />
+                  </div>
+                  <h3 className="font-display text-xl font-semibold text-foreground mb-4">Back & Neck Pain Relief</h3>
+                  <p className="text-muted-foreground">
+                    Targeted treatment for chronic and acute back and neck pain. We identify the root cause through comprehensive evaluation and use adjustments, soft-tissue work, traction, laser, and shockwave therapy to provide lasting relief.
+                  </p>
+                </div>
+                <div className="bg-sage-light/30 rounded-2xl p-8">
+                  <div className="h-14 w-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
+                    <UserCheck className="h-7 w-7 text-primary" />
+                  </div>
+                  <h3 className="font-display text-xl font-semibold text-foreground mb-4">Posture Correction</h3>
+                  <p className="text-muted-foreground">
+                    Poor posture from desk work, tech use, or daily habits can lead to pain and dysfunction. We provide adjustments, strengthening exercises, and ergonomic coaching to improve your posture and prevent future problems.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
             <div className="space-y-20">
               {services.map((service, index) => (
                 <motion.div
@@ -260,8 +239,8 @@ export default function ServicesPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6 }}
                 >
-                  <div className={`grid lg:grid-cols-2 gap-12 items-start ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
-                    <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
+                  <div className="grid lg:grid-cols-2 gap-12 items-start">
+                    <div>
                       <div className="flex items-center gap-4 mb-6">
                         <div className="h-14 w-14 rounded-xl bg-primary/10 flex items-center justify-center">
                           <service.icon className="h-7 w-7 text-primary" />
@@ -292,7 +271,7 @@ export default function ServicesPage() {
                       </div>
                     </div>
 
-                    <div className={`bg-sage-light/30 rounded-2xl p-8 ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
+                    <div className="bg-sage-light/30 rounded-2xl p-8">
                       <div className="space-y-6">
                         <div>
                           <h3 className="font-semibold text-foreground mb-3">What to Expect</h3>

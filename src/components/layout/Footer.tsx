@@ -11,11 +11,11 @@ const navigation = {
     { name: "Contact", href: "/contact" },
   ],
   services: [
-    { name: "Chiropractic Adjustments", href: "/services#adjustments" },
-    { name: "Back & Neck Pain Relief", href: "/services#pain-relief" },
+    { name: "Our Services", href: "/services#our-services" },
     { name: "Auto Injury Care", href: "/services#auto-injury" },
     { name: "Sports Injury Care", href: "/services#sports" },
-    { name: "Posture Correction", href: "/services#posture" },
+    { name: "Joint Repair", href: "/services#joint-repair" },
+    { name: "Injury Disability", href: "/services#injury-disability" },
   ],
 };
 
