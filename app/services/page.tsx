@@ -7,190 +7,226 @@ export const dynamic = 'force-dynamic';
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { 
-  Bone, Activity, Car, Dumbbell, UserCheck, 
-  CheckCircle, Calendar,   ArrowRight, FileText
+import { useEffect } from "react";
+import {
+  Bone,
+  Activity,
+  Car,
+  Dumbbell,
+  UserCheck,
+  CheckCircle,
+  Calendar,
+  ArrowRight,
+  FileText,
 } from "lucide-react";
 
 const services = [
   {
-    id: "adjustments",
-    icon: Bone,
-    title: "Chiropractic Adjustments",
-    shortDesc: "Restore proper spinal alignment and nerve function.",
-    forWho: "Anyone experiencing spinal misalignment, joint restrictions, or seeking overall wellness.",
-    problems: [
-      "Poor posture and spinal misalignment",
-      "Reduced mobility and flexibility",
-      "Nerve interference causing pain or dysfunction",
-      "General stiffness and discomfort",
-    ],
-    expect: "Our chiropractors will perform a thorough examination, discuss your concerns, and use precise, controlled techniques to adjust your spine. We offer traditional chiropractic adjustments or light force using the pro adjuster for patients who prefer a gentler approach. Many patients feel immediate relief, while others notice improvement over subsequent visits.",
-    benefits: [
-      "Improved nerve function",
-      "Better posture and alignment",
-      "Reduced pain and discomfort",
-      "Enhanced mobility and flexibility",
-      "Overall improved well-being",
-    ],
-  },
-  {
-    id: "pain-relief",
-    icon: Activity,
-    title: "Back & Neck Pain Relief",
-    shortDesc: "Find lasting relief from chronic and acute pain.",
-    forWho: "Office workers, laborers, seniors, and anyone suffering from persistent back or neck pain.",
-    problems: [
-      "Chronic lower back pain",
-      "Neck pain and tension headaches",
-      "Sciatica and radiating leg pain",
-      "Muscle spasms and tightness",
-    ],
-    expect: "We'll identify the root cause of your pain through examination and possibly imaging. Treatment may include adjustments, soft tissue therapy, and personalized exercises to address both symptoms and underlying issues.",
-    benefits: [
-      "Significant pain reduction",
-      "Improved daily function",
-      "Reduced reliance on pain medication",
-      "Prevention of future episodes",
-      "Better quality of life",
-    ],
-  },
-  {
     id: "auto-injury",
     icon: Car,
     title: "Auto Injury & Whiplash Care",
-    shortDesc: "Specialized treatment for accident-related injuries.",
-    forWho: "Anyone involved in an auto accident, even if symptoms haven't appeared yet.",
+    shortDesc: "Same-day appointments and documentation support after a collision.",
+    forWho:
+      "Anyone involved in an auto accident, even if symptoms haven't appeared yet.",
     problems: [
       "Whiplash and neck injuries",
-      "Soft tissue damage",
+      "Soft tissue damage and ligament sprain/strain",
       "Headaches following accidents",
       "Hidden injuries that may develop later",
     ],
-    expect: "We'll thoroughly document your injuries for insurance purposes and create a comprehensive treatment plan. Care typically includes gentle adjustments, rehabilitation exercises, and coordination with other healthcare providers if needed.",
+    expect:
+      "We document your injuries for med pay, 3rd party, WC insurance, or attorney cases and create a care plan so acute pain doesn’t become chronic. Gentle adjustments, rehab exercises, and imaging when needed.",
     benefits: [
       "Proper injury documentation",
-      "Early treatment prevents chronic issues",
-      "Insurance claim support",
-      "Full recovery guidance",
-      "Return to normal activities",
+      "Reduced risk of chronic pain",
+      "Insurance/attorney support",
+      "Guidance back to normal activities",
+      "Same-day availability",
     ],
   },
   {
     id: "sports",
     icon: Dumbbell,
     title: "Sports Injury Care",
-    shortDesc: "Get back in the game faster and perform better.",
-    forWho: "Athletes of all levels, from weekend warriors to competitive sports enthusiasts.",
+    shortDesc: "Rehab that keeps athletes of every level moving and performing.",
+    forWho:
+      "Weekend warriors to competitive athletes dealing with pain or looking to prevent it.",
     problems: [
       "Sports-related strains and sprains",
-      "Overuse injuries",
+      "Overuse injuries and tendon issues",
       "Performance limitations",
-      "Recovery from training",
+      "Recovery after heavy training",
     ],
-    expect: "We understand athletes need to return to activity safely and quickly. Treatment combines chiropractic care with sports-specific rehabilitation to address your injury while optimizing performance.",
+    expect:
+      "Chiropractic adjustments plus sports-specific rehab to return you safely and quickly. We focus on biomechanics, flexibility, and strategies to avoid repeat injuries.",
     benefits: [
       "Faster recovery time",
-      "Improved athletic performance",
+      "Improved performance",
       "Injury prevention strategies",
-      "Enhanced flexibility and range of motion",
+      "Better flexibility and range of motion",
       "Personalized training guidance",
-    ],
-  },
-  {
-    id: "posture",
-    icon: UserCheck,
-    title: "Posture Correction & Wellness Care",
-    shortDesc: "Preventive care for long-term spinal health.",
-    forWho: "Those seeking to maintain good health, desk workers, and anyone wanting to improve their posture.",
-    problems: [
-      "Forward head posture",
-      "Rounded shoulders",
-      "Tech neck from device use",
-      "General poor posture habits",
-    ],
-    expect: "We'll assess your posture, identify problematic patterns, and create a plan that includes adjustments, exercises, and ergonomic recommendations to help you maintain optimal spinal health.",
-    benefits: [
-      "Better posture and appearance",
-      "Reduced risk of future problems",
-      "Increased energy levels",
-      "Improved breathing and circulation",
-      "Long-term health maintenance",
-    ],
-  },
-  {
-    id: "brain-injury",
-    icon: Activity,
-    title: "Brain Injury & Concussion Care",
-    shortDesc: "Specialized care for brain injuries and concussions.",
-    forWho: "Anyone who has experienced a head injury, concussion, or trauma that may have affected brain function.",
-    problems: [
-      "Concussion symptoms",
-      "Post-traumatic headaches",
-      "Cognitive difficulties after injury",
-      "Chronic pain following brain injury",
-    ],
-    expect: "We provide comprehensive evaluation and treatment for brain injuries, working to address both immediate symptoms and long-term effects through specialized chiropractic and therapeutic approaches.",
-    benefits: [
-      "Improved cognitive function",
-      "Reduced headache frequency",
-      "Better balance and coordination",
-      "Enhanced recovery outcomes",
-      "Comprehensive injury documentation",
     ],
   },
   {
     id: "joint-repair",
     icon: Bone,
     title: "Joint Repair & Regeneration",
-    shortDesc: "Advanced care for joint damage and tissue healing.",
-    forWho: "Patients with joint damage from injury or trauma, arthritis, or degenerative joint conditions.",
+    shortDesc: "Joint damage explained with options for tissue healing and relief.",
+    forWho:
+      "Patients with joint damage from trauma, arthritis, or degeneration who want better function.",
     problems: [
       "Joint damage from trauma",
-      "Ligament injuries",
-      "Arthritis pain",
+      "Ligament injuries and instability",
+      "Arthritis pain and stiffness",
       "Degenerative joint conditions",
     ],
-    expect: "We use advanced techniques including laser therapy, shockwave, and regenerative approaches to help repair joint damage and promote tissue healing. X-ray services available for proper diagnosis.",
+    expect:
+      "Evaluation, X-ray when appropriate, and regenerative approaches including laser and shockwave to improve healing. Goal: pain relief, tissue healing, and better long-term function.",
     benefits: [
       "Improved joint function",
       "Reduced pain and inflammation",
       "Enhanced tissue healing",
       "Better range of motion",
-      "Prevention of chronic joint issues",
+      "Education on protecting damaged joints",
+    ],
+  },
+  {
+    id: "brain-injury",
+    icon: Activity,
+    title: "Brain Injury & Concussion Care",
+    shortDesc: "Seminar-backed approach to headaches, concussion, and chronic pain.",
+    forWho:
+      "Anyone who has experienced a head injury, concussion, or trauma affecting brain function.",
+    problems: [
+      "Concussion symptoms and fogginess",
+      "Post-traumatic headaches",
+      "Cognitive or balance difficulties after injury",
+      "Chronic pain following brain injury",
+    ],
+    expect:
+      "Comprehensive evaluation with strategies discussed in our 2024 brain injury seminar. Focus on symptom relief, balance, and long-term recovery while coordinating care as needed.",
+    benefits: [
+      "Improved cognitive function",
+      "Reduced headache frequency",
+      "Better balance and coordination",
+      "Enhanced recovery outcomes",
+      "Complete injury documentation",
     ],
   },
   {
     id: "impairment-ratings",
     icon: FileText,
     title: "Impairment & Disability Ratings",
-    shortDesc: "Expert evaluation for impairment and disability assessments.",
-    forWho: "Patients requiring impairment ratings, disability exams, or injury causation analysis for legal or insurance purposes.",
+    shortDesc:
+      "Expert services for impairment ratings, injury causation, and clinical exams.",
+    forWho:
+      "Patients needing impairment ratings, disability exams, or expert documentation for legal or insurance needs.",
     problems: [
       "Need for impairment rating",
-      "Disability evaluation required",
+      "Disability or peer review evaluation",
       "Injury causation analysis",
-      "Expert testimony needs",
+      "Expert testimony or documentation",
     ],
-    expect: "Dr. Connelly provides expert services including impairment ratings, disability exams, and injury causation analysis. You'll need your medical records and an appointment for evaluation.",
+    expect:
+      "Appointment required with your records. No LOPs; fees based on AMA UCR. Georgia peer review compliant under O.C.G.A. § 43-9-1. We do not contract with health insurance.",
     benefits: [
-      "Expert evaluation and documentation",
-      "Compliance with legal requirements",
-      "Thorough injury assessment",
-      "Professional testimony when needed",
-      "Accurate impairment ratings",
+      "Accurate, professional ratings",
+      "Compliance with Georgia regulations",
+      "Clear documentation for legal needs",
+      "Honest guidance on qualification",
+      "Experienced expert testimony",
+    ],
+  },
+  {
+    id: "family-care",
+    icon: UserCheck,
+    title: "Family, Pregnancy & Senior Care",
+    shortDesc:
+      "Gentle or traditional care for every life stage—kids, adults, pregnancy, and seniors.",
+    forWho:
+      "Families, expectant parents, post-surgery patients, and anyone preferring light-force adjustments.",
+    problems: [
+      "Poor posture, tech neck, and scoliosis support",
+      "Pregnancy-related discomfort",
+      "Post-surgery or post-injection stiffness",
+      "Arthritis and age-related mobility limits",
+    ],
+    expect:
+      "Options include traditional adjustments or light force using the ProAdjuster. Strengthening, stretching, nutrition, lifestyle, and healthy habit coaching to keep you active.",
+    benefits: [
+      "Care tailored to age and comfort level",
+      "Improved posture and mobility",
+      "Gentle options for those who prefer no 'cracking'",
+      "Support for healthy habits",
+      "Family-friendly scheduling",
+    ],
+  },
+  {
+    id: "pain-relief",
+    icon: Activity,
+    title: "Back, Neck, Headache & Arthritis Care",
+    shortDesc: "Relief-focused care that keeps daily life moving comfortably.",
+    forWho:
+      "Office workers, laborers, and anyone living with back pain, headaches, or arthritis.",
+    problems: [
+      "Chronic or acute lower back pain",
+      "Neck pain and tension headaches",
+      "Sciatica and radiating leg pain",
+      "Arthritis and joint stiffness",
+    ],
+    expect:
+      "We identify the root cause with exam and imaging when indicated. Treatment may include adjustments, soft-tissue work, traction, laser, shockwave, and ergonomic coaching.",
+    benefits: [
+      "Significant pain reduction",
+      "Improved daily function",
+      "Less reliance on medication",
+      "Prevention of future flare-ups",
+      "Strategies to stay active",
     ],
   },
 ];
 
 export default function ServicesPage() {
+  useEffect(() => {
+    // Handle hash scrolling after page load
+    const handleHashScroll = () => {
+      if (window.location.hash) {
+        const hash = window.location.hash.substring(1);
+        const element = document.getElementById(hash);
+        if (element) {
+          // Use requestAnimationFrame to ensure DOM is fully rendered
+          requestAnimationFrame(() => {
+            const headerOffset = 120; // Account for sticky header
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: "smooth",
+            });
+          });
+        }
+      }
+    };
+
+    // Run on mount and after delays to ensure DOM is ready
+    handleHashScroll();
+    const timer1 = setTimeout(handleHashScroll, 100);
+    const timer2 = setTimeout(handleHashScroll, 500);
+
+    return () => {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+    };
+  }, []);
+
   return (
     <>
             
         {/* Hero */}
         <section className="relative py-24 overflow-hidden">
           <div className="absolute inset-0">
-            <Image src="/assets/hero-chiropractic.jpg" alt="" className="w-full h-full object-cover" />
+            <Image src="/assets/hero-chiropractic.jpg" alt="" fill className="object-cover" />
             <div className="absolute inset-0 bg-sage-dark/90" />
           </div>
           <div className="container relative z-10">
@@ -204,8 +240,7 @@ export default function ServicesPage() {
                 Our Chiropractic Services
               </h1>
               <p className="text-xl text-primary-foreground/90 leading-relaxed">
-                Comprehensive care for every stage of life. Our goal is to prevent acute pain from becoming chronic pain. 
-                From pain relief to long-term wellness, we have the expertise to help you achieve your health goals.
+                Comprehensive care for every stage of life. Our goal is to prevent acute pain from becoming chronic pain. From auto and sports injuries to joint repair, brain injury, and impairment ratings, we have the expertise to help you heal.
               </p>
             </motion.div>
           </div>
@@ -219,7 +254,7 @@ export default function ServicesPage() {
                 <motion.div
                   key={service.id}
                   id={service.id}
-                  className="scroll-mt-24"
+                  className="scroll-mt-32"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}

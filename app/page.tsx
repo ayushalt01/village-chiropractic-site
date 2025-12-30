@@ -9,11 +9,11 @@ import { LocationSection } from "@/components/home/LocationSection";
 import { CTASection } from "@/components/home/CTASection";
 
 export const metadata: Metadata = {
-  title: "Village Chiropractic | Chiropractor in Stone Mountain, GA",
+  title: "Pain Atlanta | Chiropractor in Stone Mountain, GA",
   description:
-    "Village Chiropractic - Serving Stone Mountain, GA for 27 years. Expert chiropractic care for auto injuries, sports injuries, brain injury, joint repair, and chronic pain. Our goal is to prevent acute pain from becoming chronic pain.",
+    "Pain Atlanta - Serving the Stone Mountain area for 27 years with multidisciplinary care for injury and chronic pain. Same-day appointments available for auto injury, sports injury, brain injury, joint repair, and impairment ratings.",
   alternates: {
-    canonical: "https://villagechiropractic.com",
+    canonical: "https://www.painatlanta.com",
   },
 };
 

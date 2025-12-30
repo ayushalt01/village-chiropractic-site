@@ -14,14 +14,14 @@ const testimonials = [
     name: "Sarah Mitchell",
     location: "Stone Mountain, GA",
     condition: "Chronic Back Pain",
-    text: "After years of living with chronic lower back pain, I finally found relief at Village Chiropractic. The doctors took the time to understand my issues and created a treatment plan that actually worked. I can finally play with my kids again without worrying about my back. The staff is incredibly caring and the office has such a warm, welcoming atmosphere.",
+    text: "After years of living with chronic lower back pain, I finally found relief at Pain Atlanta. The doctors took the time to understand my issues and created a treatment plan that actually worked. I can finally play with my kids again without worrying about my back. The staff is incredibly caring and the office has such a warm, welcoming atmosphere.",
     rating: 5,
   },
   {
     name: "James Thompson",
     location: "Decatur, GA",
     condition: "Auto Accident Recovery",
-    text: "I was in a car accident and was referred to Village Chiropractic by a friend. The doctors and their team were so caring and professional throughout my entire recovery. They helped me navigate the insurance process and provided excellent care. I'm now pain-free and back to my normal activities. I can't thank them enough!",
+    text: "I was in a car accident and was referred to Pain Atlanta by a friend. The doctors and their team were so caring and professional throughout my entire recovery. They helped me navigate the insurance process and provided excellent care. I'm now pain-free and back to my normal activities. I can't thank them enough!",
     rating: 5,
   },
   {
@@ -49,21 +49,21 @@ const testimonials = [
     name: "Robert Davis",
     location: "Tucker, GA",
     condition: "Sciatica Relief",
-    text: "The sciatic pain I was experiencing made it difficult to even walk. After just a few weeks of treatment at Village Chiropractic, I went from barely being able to move to walking pain-free. The doctors' approach is thorough, and they genuinely care about their patients. I'm so grateful I found this practice.",
+    text: "The sciatic pain I was experiencing made it difficult to even walk. After just a few weeks of treatment at Pain Atlanta, I went from barely being able to move to walking pain-free. The doctors' approach is thorough, and they genuinely care about their patients. I'm so grateful I found this practice.",
     rating: 5,
   },
   {
     name: "Jennifer Williams",
     location: "Stone Mountain, GA",
     condition: "Family Care",
-    text: "Our whole family sees the doctors at Village Chiropractic—from my 8-year-old daughter to my 70-year-old mother. They're gentle with the kids and thorough with adults. It's so convenient to have one trusted provider for everyone. The office is always clean, the staff is friendly, and appointments run on time. We love Village Chiropractic!",
+    text: "Our whole family sees the doctors at Pain Atlanta—from my 8-year-old daughter to my 70-year-old mother. They're gentle with the kids and thorough with adults. It's so convenient to have one trusted provider for everyone. The office is always clean, the staff is friendly, and appointments run on time. We love Pain Atlanta!",
     rating: 5,
   },
   {
     name: "David Martinez",
     location: "Snellville, GA",
     condition: "Work Injury",
-    text: "I injured my back at work and was skeptical about chiropractic care. A coworker recommended Village Chiropractic, and I'm so glad I listened. The doctors explained everything clearly and made me feel comfortable from day one. I'm back to work without pain, and I continue maintenance visits to stay healthy.",
+    text: "I injured my back at work and was skeptical about chiropractic care. A coworker recommended Pain Atlanta, and I'm so glad I listened. The doctors explained everything clearly and made me feel comfortable from day one. I'm back to work without pain, and I continue maintenance visits to stay healthy.",
     rating: 5,
   },
 ];
@@ -75,7 +75,7 @@ export default function TestimonialsPage() {
         {/* Hero */}
         <section className="relative py-24 overflow-hidden">
           <div className="absolute inset-0">
-            <Image src="/assets/hero-chiropractic.jpg" alt="" className="w-full h-full object-cover" />
+            <Image src="/assets/hero-chiropractic.jpg" alt="" fill className="object-cover" />
             <div className="absolute inset-0 bg-sage-dark/90" />
           </div>
           <div className="container relative z-10">
@@ -90,7 +90,7 @@ export default function TestimonialsPage() {
               </h1>
               <p className="text-xl text-primary-foreground/90 leading-relaxed">
                 Don't just take our word for it. Hear from real patients who have found 
-                relief and improved their quality of life at Village Chiropractic.
+                relief and improved their quality of life at Pain Atlanta.
               </p>
             </motion.div>
           </div>
@@ -148,7 +148,7 @@ export default function TestimonialsPage() {
                 Ready to Write Your Own Success Story?
               </h2>
               <p className="text-primary-foreground/90 text-lg mb-8 max-w-2xl mx-auto">
-                Join the hundreds of satisfied patients who have found relief at Village Chiropractic.
+                Join the hundreds of satisfied patients who have found relief at Pain Atlanta.
               </p>
               <Link href="/contact">
                 <Button variant="hero" size="xl" className="bg-primary-foreground text-primary hover:bg-primary-foreground/90">

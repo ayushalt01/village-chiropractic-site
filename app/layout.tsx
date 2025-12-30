@@ -25,11 +25,11 @@ export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
   title: {
-    default: "Village Chiropractic | Chiropractor in Stone Mountain, GA",
-    template: "%s | Village Chiropractic",
+    default: "Pain Atlanta | Chiropractor in Stone Mountain, GA",
+    template: "%s | Pain Atlanta",
   },
   description:
-    "Village Chiropractic - Serving Stone Mountain, GA for 27 years. Expert chiropractic care for auto injuries, sports injuries, brain injury, joint repair, and chronic pain. Our goal is to prevent acute pain from becoming chronic pain.",
+    "Pain Atlanta - Serving the Stone Mountain area for 27 years. Multidisciplinary chiropractic care for auto injuries, sports injuries, brain injury, joint repair, impairment ratings, and chronic pain with same-day appointments available.",
   keywords: [
     "chiropractor",
     "Stone Mountain",
@@ -41,23 +41,23 @@ export const metadata: Metadata = {
     "sports injury",
     "wellness",
   ],
-  authors: [{ name: "Village Chiropractic" }],
-  creator: "Village Chiropractic",
-  metadataBase: new URL("https://villagechiropractic.com"),
+  authors: [{ name: "Pain Atlanta" }],
+  creator: "Pain Atlanta",
+  metadataBase: new URL("https://www.painatlanta.com"),
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://villagechiropractic.com",
-    siteName: "Village Chiropractic",
-    title: "Village Chiropractic | Chiropractor in Stone Mountain, GA",
+    url: "https://www.painatlanta.com",
+    siteName: "Pain Atlanta",
+    title: "Pain Atlanta | Chiropractor in Stone Mountain, GA",
     description:
-      "Serving Stone Mountain, GA for 27 years. Expert chiropractic care for auto injuries, sports injuries, brain injury, joint repair, and chronic pain.",
+      "Serving Stone Mountain, GA for 27 years. Expert chiropractic care for auto injuries, sports injuries, brain injury, joint repair, impairment ratings, and chronic pain.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Village Chiropractic | Chiropractor in Stone Mountain, GA",
+    title: "Pain Atlanta | Chiropractor in Stone Mountain, GA",
     description:
-      "Serving Stone Mountain, GA for 27 years. Expert chiropractic care for auto injuries, sports injuries, brain injury, joint repair, and chronic pain.",
+      "Serving Stone Mountain, GA for 27 years. Expert chiropractic care for auto injuries, sports injuries, brain injury, joint repair, impairment ratings, and chronic pain.",
   },
   robots: {
     index: true,

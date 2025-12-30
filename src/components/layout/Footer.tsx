@@ -28,15 +28,15 @@ export function Footer() {
           <div className="space-y-6">
             <Link href="/" className="flex items-center gap-3">
               <div className="h-12 w-12 rounded-full bg-primary-foreground/20 flex items-center justify-center">
-                <span className="text-primary-foreground font-display text-xl font-bold">VC</span>
+                <span className="text-primary-foreground font-display text-xl font-bold">PA</span>
               </div>
               <div className="flex flex-col">
-                <span className="font-display text-xl font-semibold">Village Chiropractic</span>
+                <span className="font-display text-xl font-semibold">Pain Atlanta</span>
                 <span className="text-xs text-primary-foreground/70">Stone Mountain, GA</span>
               </div>
             </Link>
             <p className="text-primary-foreground/80 leading-relaxed">
-              Your trusted partner in natural pain relief and wellness. Serving the Stone Mountain community with compassionate, personalized chiropractic care.
+              In pain? Injured? We can help. Serving the Stone Mountain area for 27 years with multidisciplinary chiropractic care focused on preventing acute pain from becoming chronic pain.
             </p>
             <div className="flex gap-4">
               <a
@@ -111,11 +111,11 @@ export function Footer() {
                 <span>(770) 469-7330</span>
               </a>
               <a
-                href="mailto:info@villagechiro.com"
+                href="mailto:info@painatlanta.com"
                 className="flex items-center gap-3 text-primary-foreground/80 hover:text-primary-foreground transition-colors"
               >
                 <Mail className="h-5 w-5" />
-                <span>info@villagechiro.com</span>
+                <span>info@painatlanta.com</span>
               </a>
               <div className="flex items-start gap-3 text-primary-foreground/80">
                 <Clock className="h-5 w-5 mt-0.5 flex-shrink-0" />
@@ -123,6 +123,7 @@ export function Footer() {
                   <p>Mon-Fri: 9AM - 7PM</p>
                   <p>Saturday: 9AM - 12PM</p>
                   <p>Sunday: Closed</p>
+                  <p className="text-xs mt-1 opacity-80">Last patient 30 min before close</p>
                 </div>
               </div>
             </div>
@@ -133,7 +134,7 @@ export function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-primary-foreground/20">
         <div className="container py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-primary-foreground/70">
-          <p>© {new Date().getFullYear()} Village Chiropractic. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Pain Atlanta. All rights reserved.</p>
           <div className="flex gap-6">
             <Link href="/privacy" className="hover:text-primary-foreground transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-primary-foreground transition-colors">Terms of Service</Link>

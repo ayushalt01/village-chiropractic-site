@@ -9,7 +9,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { 
   Calendar, FileText, CheckCircle, Clock, 
-  HelpCircle, Shield, Sparkles 
+  HelpCircle, Shield, Sparkles, ArrowRight
 } from "lucide-react";
 
 const firstVisitSteps = [
@@ -42,6 +42,30 @@ const firstVisitSteps = [
 
 const faqs = [
   {
+    question: "Office hours",
+    answer: "Open Monday - Friday 9-7 & Saturday 9-12. We see the last patient 30 minutes before we close.",
+  },
+  {
+    question: "Do you accept auto injury, or work injury patients?",
+    answer: "Yes. We can bill the med pay, 3rd party insurance (other persons insurance), WC insurance or attorney. Our Office, as a group and individually, does NOT contract with any health insurance companies, including Medicaid or Medicare.",
+  },
+  {
+    question: "Do you accept non injury patients?",
+    answer: "Yes. Just call 770-469-7330 to make an appointment. Our Office, as a group and individually, does NOT contract with any health insurance companies, including Medicaid or Medicare.",
+  },
+  {
+    question: "Do you offer light force adjustments / therapy?",
+    answer: "Yes. Traditional chiropractic adjustments or light force using the pro adjuster.",
+  },
+  {
+    question: "What other therapies does your office offer?",
+    answer: "Exercise, nutrition, lifestyle care, laser, mindfulness therapy, CBT, strengthening, shockwave, traction & traditional chiropractic therapy. Laser & shockwave work very well and are by appointment only.",
+  },
+  {
+    question: "For impairment or disability ratings do I need an appointment?",
+    answer: "Yes & you need your records to help determine the diagnosis. Not everyone qualifies for impairment and disability. Social Security Administration states that an impairment is, \"A medically determinable physical or mental impairment must result from anatomical, physiological, or psychological abnormalities which can be shown by medically acceptable clinical and laboratory diagnostic techniques.\" Call 770-469-7330 for more information.",
+  },
+  {
     question: "Is chiropractic care safe?",
     answer: "Yes, chiropractic care is one of the safest drug-free, non-invasive therapies available for treating pain and musculoskeletal conditions. Our doctors use gentle techniques appropriate for patients of all ages.",
   },
@@ -54,24 +78,12 @@ const faqs = [
     answer: "This varies depending on your condition, how long you've had it, and your health goals. During your first visit, we'll discuss a recommended treatment plan. Many patients see significant improvement within a few visits.",
   },
   {
-    question: "Do you accept my insurance?",
-    answer: "Our office does NOT contract with any health insurance companies, including Medicaid or Medicare. However, we do accept auto injury and work injury patients. We can bill med pay, 3rd party insurance (other person's insurance), WC insurance, or attorney. We also offer affordable self-pay options for non-injury patients.",
-  },
-  {
     question: "Can children receive chiropractic care?",
     answer: "Absolutely! Children can benefit greatly from chiropractic care. Our doctors use extra-gentle techniques appropriate for younger patients, addressing issues like poor posture, sports injuries, and growing pains.",
   },
   {
     question: "What should I wear to my appointment?",
     answer: "Wear comfortable, loose-fitting clothing that allows for movement. Avoid dresses or restrictive clothing. Athletic wear or casual clothes work great.",
-  },
-  {
-    question: "Do you offer light force adjustments / therapy?",
-    answer: "Yes. We offer traditional chiropractic adjustments or light force using the pro adjuster. We also provide exercise, nutrition, lifestyle care, laser, mindfulness therapy, CBT, strengthening, shockwave, and traction. Laser & shockwave work very well and are by appointment only.",
-  },
-  {
-    question: "Do you accept auto injury, or work injury patients?",
-    answer: "Yes. We can bill the med pay, 3rd party insurance (other person's insurance), WC insurance or attorney. Our office, as a group and individually, does NOT contract with any health insurance companies, including Medicaid or Medicare.",
   },
 ];
 
@@ -82,7 +94,7 @@ export default function NewPatientsPage() {
         {/* Hero */}
         <section className="relative py-24 overflow-hidden">
           <div className="absolute inset-0">
-            <Image src="/assets/hero-chiropractic.jpg" alt="" className="w-full h-full object-cover" />
+            <Image src="/assets/hero-chiropractic.jpg" alt="" fill className="object-cover" />
             <div className="absolute inset-0 bg-sage-dark/90" />
           </div>
           <div className="container relative z-10">
@@ -96,7 +108,7 @@ export default function NewPatientsPage() {
                 New Patient Information
               </h1>
               <p className="text-xl text-primary-foreground/90 leading-relaxed">
-                Welcome to Village Chiropractic! We're excited to meet you and help you 
+                Welcome to Pain Atlanta! We're excited to meet you and help you 
                 on your journey to better health. Here's everything you need to know about your first visit.
               </p>
             </motion.div>
@@ -208,6 +220,33 @@ export default function NewPatientsPage() {
                 </p>
               </motion.div>
             </div>
+
+              <motion.div
+                className="max-w-4xl mx-auto mt-10 bg-card border border-border/50 rounded-xl p-8 text-left shadow-soft"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+              >
+                <div className="flex items-start gap-4 mb-4">
+                  <FileText className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                  <div className="flex-1">
+                    <h3 className="font-semibold text-foreground mb-3">Notice Regarding Provider Financial Relationship and Payment Terms</h3>
+                    <p className="text-sm text-muted-foreground mb-4">
+                      Payment is due at the time of service unless other arrangements are made.
+                    </p>
+                    <ul className="list-disc list-inside space-y-2 text-sm text-muted-foreground mb-4">
+                      <li>We do NOT contract with any health insurance company, including Medicaid or Medicare.</li>
+                      <li>No Letters of Protection (LOPs) or attorney liens; payment is due at time of service unless other arrangements are made.</li>
+                      <li>Fees follow AMA UCR definitions; we do not sell or fund medical accounts to third parties.</li>
+                      <li>Georgia peer review compliant under O.C.G.A. § 43-9-1; disputes require a chiropractor approved by the Georgia Board of Chiropractic Examiners.</li>
+                    </ul>
+                    <Link href="/terms" className="text-primary hover:underline text-sm font-medium inline-flex items-center gap-1">
+                      Read full payment terms and financial notice <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  </div>
+                </div>
+              </motion.div>
           </div>
         </section>
 

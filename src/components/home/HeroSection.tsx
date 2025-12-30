@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -5,9 +7,9 @@ import { Button } from "@/components/ui/button";
 import { Phone, Calendar, CheckCircle, ArrowRight } from "lucide-react";
 
 const benefits = [
-  "Natural Pain Relief",
-  "Personalized Care Plans",
-  "Same-Day Appointments",
+  "Serving Stone Mountain for 27 years",
+  "Same-day appointments available",
+  "Most patients improve with multidisciplinary care",
 ];
 
 export function HeroSection() {
@@ -34,7 +36,7 @@ export function HeroSection() {
             transition={{ duration: 0.6 }}
           >
             <span className="inline-block bg-primary-foreground/10 backdrop-blur-sm text-primary-foreground px-4 py-2 rounded-full text-sm font-medium mb-6 border border-primary-foreground/20">
-              Serving Stone Mountain for 27 Years
+              Call Today (770) 469-7330 — Same-Day Appointments
             </span>
           </motion.div>
 
@@ -44,9 +46,9 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            Find Relief. <br />
-            <span className="text-sage-light">Restore Balance.</span><br />
-            Live Better.
+            In Pain? Injured? <br />
+            <span className="text-sage-light">We can help.</span><br />
+            Get the care you deserve.
           </motion.h1>
 
           <motion.p
@@ -55,9 +57,7 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Experience personalized chiropractic care designed to help you overcome pain, 
-            improve mobility, and achieve lasting wellness. Our goal is to prevent acute pain 
-            from becoming chronic pain. Your neighborhood clinic, dedicated to your health.
+            Most patients can significantly improve from injury and chronic pain through multidisciplinary care focused on managing symptoms for better function. We work to prevent acute pain from becoming chronic pain—naturally, without unnecessary drugs, surgery, or injections.
           </motion.p>
 
           <motion.div
@@ -69,13 +69,13 @@ export function HeroSection() {
             <Link href="/contact">
               <Button variant="hero" size="xl">
                 <Calendar className="h-5 w-5" />
-                Book Appointment
+                Schedule Today
               </Button>
             </Link>
             <a href="tel:+17704697330">
               <Button variant="hero-outline" size="xl">
                 <Phone className="h-5 w-5" />
-                Call Now
+                Call (770) 469-7330
               </Button>
             </a>
           </motion.div>

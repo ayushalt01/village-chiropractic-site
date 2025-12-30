@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -5,34 +7,40 @@ import { ArrowRight, Activity, Bone, Car, Dumbbell, UserCheck } from "lucide-rea
 
 const services = [
   {
-    icon: Bone,
-    title: "Chiropractic Adjustments",
-    description: "Precise spinal adjustments to restore proper alignment, reduce nerve interference, and promote natural healing.",
-    href: "/services#adjustments",
-  },
-  {
-    icon: Activity,
-    title: "Back & Neck Pain Relief",
-    description: "Targeted treatment for chronic and acute pain, helping you find lasting relief without medication.",
-    href: "/services#pain-relief",
-  },
-  {
     icon: Car,
     title: "Auto Injury & Whiplash",
-    description: "Specialized care for accident-related injuries, supporting your recovery and documentation needs.",
+    description: "Same-day care for auto injuries with documentation support to prevent long-term issues.",
     href: "/services#auto-injury",
   },
   {
     icon: Dumbbell,
     title: "Sports Injury Care",
-    description: "Performance-focused treatment for athletes, from weekend warriors to competitive sports enthusiasts.",
+    description: "Performance-minded rehab and chiropractic care to help you return stronger and prevent reinjury.",
     href: "/services#sports",
   },
   {
+    icon: Bone,
+    title: "Joint Repair & Regeneration",
+    description: "Joint damage evaluation, X-rays when needed, and regenerative therapies for tissue healing.",
+    href: "/services#joint-repair",
+  },
+  {
+    icon: Activity,
+    title: "Brain Injury & Concussion",
+    description: "Specialized evaluation and care for brain injuries, headaches, and post-concussion symptoms.",
+    href: "/services#brain-injury",
+  },
+  {
     icon: UserCheck,
-    title: "Posture & Wellness Care",
-    description: "Preventive care and lifestyle guidance to maintain spinal health and overall well-being.",
-    href: "/services#posture",
+    title: "Impairment & Disability Ratings",
+    description: "Expert impairment ratings, injury causation, and clinical services for legal or insurance needs.",
+    href: "/services#impairment-ratings",
+  },
+  {
+    icon: Activity,
+    title: "Family, Pregnancy & Senior Care",
+    description: "Gentle or traditional adjustments for kids, adults, pregnancy, and post-surgery patients.",
+    href: "/services#family-care",
   },
 ];
 
@@ -68,6 +76,7 @@ export function ServicesSection() {
             >
               <Link
                 href={service.href}
+                scroll={true}
                 className="group block bg-card rounded-2xl p-8 shadow-soft hover:shadow-card border border-border/50 hover:border-primary/30 transition-all duration-300 h-full"
               >
                 <div className="h-12 w-12 rounded-xl bg-sage-light flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">

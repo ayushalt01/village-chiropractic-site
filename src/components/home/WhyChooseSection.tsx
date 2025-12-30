@@ -1,31 +1,33 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { Heart, Award, Users, MapPin, Shield } from "lucide-react";
 
 const benefits = [
   {
     icon: Heart,
-    title: "Personalized Care",
-    description: "Every treatment plan is tailored to your unique needs, goals, and lifestyle. We listen first, then create your path to wellness.",
+    title: "Inclusive, Patient-First Care",
+    description: "We proudly serve all genders, races, ages, orientations, and backgrounds with respectful care that listens first and tailors treatment to your goals.",
   },
   {
     icon: Award,
-    title: "Experienced Chiropractors",
-    description: "Our experienced team of chiropractors combines proven techniques with modern approaches for optimal results.",
+    title: "27+ Years & Award-Winning",
+    description: "Serving Stone Mountain since 1997 with over 100,000 patient visits. Voted 2019 GCA Georgia Chiropractor of the Year.",
   },
   {
     icon: Users,
-    title: "Gentle Techniques",
-    description: "We use a variety of gentle, effective adjustment methods suitable for patients of all ages, from children to seniors.",
+    title: "Gentle & Traditional Options",
+    description: "Traditional adjustments or light force with the ProAdjuster. Great for kids, pregnancy, post-surgery patients, and those who prefer no 'cracking.'",
   },
   {
     icon: MapPin,
-    title: "Convenient Location",
-    description: "Located in the heart of Stone Mountain, we're easily accessible with ample parking and a warm, welcoming environment.",
+    title: "Walk-In Office Hours",
+    description: "Open Mon–Fri 9:00a–7:00p and Sat 9:00a–12:00p. Last patient 30 minutes before close. Call ahead if you’re new.",
   },
   {
     icon: Shield,
-    title: "Auto & Work Injury Care",
-    description: "We accept auto injury and work injury patients. We can bill med pay, 3rd party insurance, WC insurance, or attorney. Self-pay options available.",
+    title: "Auto & Work Injury Friendly",
+    description: "We bill med pay, 3rd party, WC insurance, or attorney. We do not contract with health insurers and offer clear self-pay options.",
   },
 ];
 
@@ -40,13 +42,12 @@ export function WhyChooseSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <span className="text-primary font-medium mb-4 block">Why Village Chiropractic</span>
+          <span className="text-primary font-medium mb-4 block">Why Pain Atlanta</span>
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
             Care You Can Trust, Results You Can Feel
           </h2>
           <p className="text-muted-foreground text-lg">
-            At Village Chiropractic, we believe in treating the whole person—not just the symptoms. 
-            Our patient-first approach has helped thousands in Stone Mountain live pain-free lives.
+            We focus on preventing acute pain from becoming chronic pain, combining chiropractic, rehab, and lifestyle guidance to help Stone Mountain patients recover and thrive.
           </p>
         </motion.div>
 

@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -69,7 +71,7 @@ export function DoctorSection() {
             </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed mb-8">
               <p>Our experienced team of chiropractors, Dr. Christopher Connelly and Dr. Ashley Dumas, are dedicated to serving the Stone Mountain community, helping thousands of patients find relief from pain and achieve optimal health through natural, drug-free chiropractic care.</p>
-              <p>At Village Chiropractic, our mission is simple: to provide compassionate, personalized care that treats the whole person—not just the symptoms.</p>
+              <p>At Pain Atlanta, our mission is simple: to provide compassionate, personalized care that treats the whole person—not just the symptoms.</p>
               <p>Whether you're dealing with chronic back pain, recovering from an injury, or looking to maintain your health proactively, our doctors take the time to understand your unique situation and create a treatment plan that works for your life.</p>
             </div>
             <div className="flex flex-wrap gap-4">

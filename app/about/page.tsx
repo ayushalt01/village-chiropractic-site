@@ -54,11 +54,10 @@ export default function AboutPage() {
             transition={{ duration: 0.6 }}
           >
             <h1 className="font-display text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
-              About Village Chiropractic
+              About Pain Atlanta
             </h1>
             <p className="text-xl text-primary-foreground/90 leading-relaxed">
-              Serving the Stone Mountain area for 27 years with compassionate, personalized 
-              chiropractic care.
+              Serving the Stone Mountain area for 27 years with compassionate, personalized chiropractic care focused on preventing acute pain from becoming chronic pain.
             </p>
           </motion.div>
         </div>
@@ -80,21 +79,19 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Village Chiropractic has been serving the Stone Mountain area since 1997 with a 
-                  simple vision: to provide exceptional chiropractic care that treats the whole person, 
-                  not just the symptoms. Our goal is to prevent acute pain from becoming chronic pain.
+                  Pain Atlanta has been serving the Stone Mountain area since 1997 with a simple vision: to provide exceptional chiropractic care that treats the whole person, not just the symptoms. Our goal is to prevent acute pain from becoming chronic pain.
                 </p>
                 <p>
-                  What started as a small practice has grown into a trusted destination for families, 
-                  professionals, athletes, and seniors seeking natural pain relief and wellness care. 
-                  Over 27 years, we've helped over 100,000 patients find relief from pain, recover 
-                  from injuries, and achieve their health goals.
+                  What started as a small practice has grown into a trusted destination for families, professionals, athletes, and seniors seeking natural pain relief and wellness care. Over 27 years, we've helped over 100,000 patients find relief from pain, recover from injuries, and achieve their health goals.
                 </p>
                 <p>
-                  Today, Village Chiropractic remains true to its founding principles: personalized 
-                  care, honest communication, and a genuine commitment to helping every patient live 
-                  their best life. We understand that when you are in pain or have been injured, 
-                  choosing a doctor can be one of the most important decisions you can make.
+                  We are proud to serve patients of all genders, colors, races, religions, sexual orientations, ages, national origins, disabilities, financial means, education, and political perspectives. You deserve care that respects and supports you.
+                </p>
+                <p>
+                  Our goal is to cut the number of people who progress from acute pain to chronic pain in half—a mission Dr. Connelly shares in his book on crash recovery, available free to our patients.
+                </p>
+                <p>
+                  Today, Pain Atlanta remains true to its founding principles: personalized care, honest communication, and a genuine commitment to helping every patient live their best life. If we can help you, we will tell you. If we cannot, we'll refer you to the right medical doctor.
                 </p>
               </div>
             </motion.div>
@@ -170,7 +167,7 @@ export default function AboutPage() {
               { label: "Years in Practice", value: "27+" },
               { label: "Patient Visits", value: "100,000+" },
               { label: "Disability Exams", value: "500+" },
-              { label: "Years Serving Stone Mountain", value: "27" },
+              { label: "Same-Day Appointments", value: "Yes" },
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}
@@ -240,7 +237,7 @@ export default function AboutPage() {
               Ready to Experience the Difference?
             </h2>
             <p className="text-primary-foreground/90 text-lg mb-8 max-w-2xl mx-auto">
-              Join the thousands of patients who have found relief and wellness at Village Chiropractic.
+              Join the thousands of patients who have found relief and wellness at Pain Atlanta.
             </p>
             <Link href="/contact">
               <Button variant="hero" size="xl" className="bg-primary-foreground text-primary hover:bg-primary-foreground/90">

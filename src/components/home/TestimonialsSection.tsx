@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -7,13 +9,13 @@ const testimonials = [
   {
     name: "Sarah M.",
     location: "Stone Mountain",
-    text: "After years of chronic back pain, I finally found relief at Village Chiropractic. Dr. Connelly took the time to understand my issues and created a plan that actually worked. I can finally play with my kids again!",
+    text: "After years of chronic back pain, I finally found relief at Pain Atlanta. Dr. Connelly took the time to understand my issues and created a plan that actually worked. I can finally play with my kids again!",
     rating: 5,
   },
   {
     name: "James T.",
     location: "Decatur",
-    text: "I was in a car accident and was referred to Village Chiropractic. The staff was so caring and professional. They helped me through the entire recovery process and even handled the insurance paperwork.",
+    text: "I was in a car accident and was referred to Pain Atlanta. The staff was so caring and professional. They helped me through the entire recovery process and even handled the insurance paperwork.",
     rating: 5,
   },
   {

@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -68,7 +70,7 @@ export function LocationSection() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Village Chiropractic location in Stone Mountain, GA"
+              title="Pain Atlanta location in Stone Mountain, GA"
             />
           </motion.div>
         </div>

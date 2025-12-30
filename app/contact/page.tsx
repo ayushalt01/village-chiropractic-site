@@ -21,6 +21,7 @@ export default function ContactPage() {
     email: "",
     phone: "",
     service: "",
+    firstVisit: "",
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -29,22 +30,43 @@ export default function ContactPage() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for reaching out. We'll contact you within 24 hours to confirm your appointment.",
-    });
+      const data = await response.json();
 
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      service: "",
-      message: "",
-    });
-    setIsSubmitting(false);
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to send message");
+      }
+
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for reaching out. We'll contact you within 24 hours to confirm your appointment.",
+      });
+
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        service: "",
+        firstVisit: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Form submission error:", error);
+      toast({
+        title: "Error",
+        description: error instanceof Error ? error.message : "Failed to send message. Please try again or call us directly.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -92,7 +114,7 @@ export default function ContactPage() {
                 transition={{ duration: 0.6 }}
               >
                 <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-6">
-                  Schedule Your Visit
+                  Contact Us or Schedule a Visit
                 </h2>
                 <p className="text-muted-foreground mb-8">
                   Fill out the form below and we'll contact you within 24 hours to confirm 
@@ -163,6 +185,21 @@ export default function ContactPage() {
 
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">
+                      First Visit?
+                    </label>
+                    <select
+                      value={formData.firstVisit}
+                      onChange={(e) => setFormData({ ...formData, firstVisit: e.target.value })}
+                      className="w-full h-10 px-3 rounded-lg border border-input bg-background text-foreground"
+                    >
+                      <option value="">Select an option...</option>
+                      <option value="first-visit">This is my first visit</option>
+                      <option value="returning">I've visited before</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-foreground mb-2">
                       Tell Us About Your Concerns
                     </label>
                     <Textarea
@@ -225,7 +262,7 @@ export default function ContactPage() {
                     </a>
 
                     <a
-                      href="mailto:info@villagechiro.com"
+                      href="mailto:info@painatlanta.com"
                       className="flex items-start gap-4 group"
                     >
                       <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary transition-colors">
@@ -233,7 +270,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <p className="font-semibold text-foreground">Email</p>
-                        <p className="text-primary group-hover:underline">info@villagechiro.com</p>
+                        <p className="text-primary group-hover:underline">info@painatlanta.com</p>
                       </div>
                     </a>
 
@@ -261,6 +298,7 @@ export default function ContactPage() {
                           <p>Saturday: 9AM - 12PM</p>
                           <p>Sunday: Closed</p>
                         </div>
+                        <p className="text-sm text-muted-foreground mt-2">We see the last patient 30 minutes before we close. Please call ahead if you are a new patient.</p>
                       </div>
                     </div>
                   </div>
@@ -273,8 +311,8 @@ export default function ContactPage() {
                   <div className="space-y-3">
                     {[
                       "Same-day appointments often available",
-                      "Auto & work injury care accepted",
-                      "Affordable self-pay options",
+                      "Auto & work injury care accepted (med pay, 3rd party, WC, attorney)",
+                      "Our office does NOT contract with health insurance companies",
                       "27 years serving Stone Mountain",
                       "Friendly, caring staff",
                       "Laser & shockwave therapy available",
@@ -332,7 +370,7 @@ export default function ContactPage() {
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="Village Chiropractic location in Stone Mountain, GA"
+            title="Pain Atlanta location in Stone Mountain, GA"
           />
         </section>
       

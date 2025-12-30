@@ -45,10 +45,10 @@ export function Header() {
         <div className="container flex items-center justify-between py-4">
           <Link href="/" className="flex items-center gap-3">
             <div className="h-12 w-12 rounded-full bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-display text-xl font-bold">VC</span>
+              <span className="text-primary-foreground font-display text-xl font-bold">PA</span>
             </div>
             <div className="flex flex-col">
-              <span className="font-display text-xl font-semibold text-foreground">Village Chiropractic</span>
+              <span className="font-display text-xl font-semibold text-foreground">Pain Atlanta</span>
               <span className="text-xs text-muted-foreground">Stone Mountain, GA</span>
             </div>
           </Link>
