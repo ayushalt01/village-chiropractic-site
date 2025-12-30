@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+"use client";
+
+import Link from "next/link";
 import { Phone, MapPin, Clock, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
@@ -8,8 +10,7 @@ const navigation = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Services", href: "/services" },
-  { name: "New Patients", href: "/new-patients" },
-  { name: "Testimonials", href: "/testimonials" },
+  { name: "New Patients", href: "/newpatients" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -41,12 +42,12 @@ export function Header() {
       {/* Main navigation */}
       <nav className="bg-card/95 backdrop-blur-md border-b border-border shadow-soft">
         <div className="container flex items-center justify-between py-4">
-          <Link to="/" className="flex items-center gap-3">
+          <Link href="/" className="flex items-center gap-3">
             <div className="h-12 w-12 rounded-full bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-display text-xl font-bold">VC</span>
+              <span className="text-primary-foreground font-display text-xl font-bold">PA</span>
             </div>
             <div className="flex flex-col">
-              <span className="font-display text-xl font-semibold text-foreground">Village Chiropractic</span>
+              <span className="font-display text-xl font-semibold text-foreground">Pain Atlanta</span>
               <span className="text-xs text-muted-foreground">Stone Mountain, GA</span>
             </div>
           </Link>
@@ -56,7 +57,7 @@ export function Header() {
             {navigation.map((item) => (
               <Link
                 key={item.name}
-                to={item.href}
+                href={item.href}
                 className="text-foreground/80 hover:text-primary font-medium transition-colors"
               >
                 {item.name}
@@ -71,7 +72,7 @@ export function Header() {
                 Call Now
               </Button>
             </a>
-            <Link to="/contact">
+            <Link href="/contact">
               <Button variant="hero" size="lg">
                 Book Appointment
               </Button>
@@ -100,7 +101,7 @@ export function Header() {
                 {navigation.map((item) => (
                   <Link
                     key={item.name}
-                    to={item.href}
+                    href={item.href}
                     className="block text-foreground/80 hover:text-primary font-medium py-2"
                     onClick={() => setMobileMenuOpen(false)}
                   >
@@ -114,7 +115,7 @@ export function Header() {
                       Call Now
                     </Button>
                   </a>
-                  <Link to="/contact">
+                  <Link href="/contact">
                     <Button variant="hero" size="lg" className="w-full">
                       Book Appointment
                     </Button>

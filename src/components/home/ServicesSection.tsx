@@ -1,38 +1,148 @@
+"use client";
+
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Activity, Bone, Car, Dumbbell, UserCheck } from "lucide-react";
+import { ArrowRight, Activity, Bone, Car, Dumbbell, UserCheck, FileText, Heart, Users, Stethoscope, Star, Shield, GraduationCap, Target, TrendingUp, User } from "lucide-react";
 
 const services = [
   {
-    icon: Bone,
-    title: "Chiropractic Adjustments",
-    description: "Precise spinal adjustments to restore proper alignment, reduce nerve interference, and promote natural healing.",
-    href: "/services#adjustments",
-  },
-  {
-    icon: Activity,
-    title: "Back & Neck Pain Relief",
-    description: "Targeted treatment for chronic and acute pain, helping you find lasting relief without medication.",
-    href: "/services#pain-relief",
-  },
-  {
     icon: Car,
-    title: "Auto Injury & Whiplash",
-    description: "Specialized care for accident-related injuries, supporting your recovery and documentation needs.",
+    title: "Auto Injury Care",
+    description: "Same-day care for auto injuries with documentation support to prevent long-term issues.",
     href: "/services#auto-injury",
+  },
+  {
+    icon: Shield,
+    title: "Military Exam",
+    description: "Comprehensive evaluations and documentation for military personnel and veterans.",
+    href: "/services",
   },
   {
     icon: Dumbbell,
     title: "Sports Injury Care",
-    description: "Performance-focused treatment for athletes, from weekend warriors to competitive sports enthusiasts.",
+    description: "Performance-minded rehab and chiropractic care to help you return stronger and prevent reinjury.",
     href: "/services#sports",
   },
   {
+    icon: Activity,
+    title: "Concussion & Chronic Pain",
+    description: "Specialized evaluation and care for brain injuries, concussions, and chronic pain management.",
+    href: "/services#brain-injury",
+  },
+  {
+    icon: Stethoscope,
+    title: "Headache Diagnosis & Care",
+    description: "Comprehensive evaluation and treatment for headaches, migraines, and tension-related head pain.",
+    href: "/services#pain-relief",
+  },
+  {
+    icon: Bone,
+    title: "Back Pain",
+    description: "Targeted treatment for chronic and acute back pain to help you find lasting relief.",
+    href: "/services#pain-relief",
+  },
+  {
+    icon: Activity,
+    title: "Scoliosis Care",
+    description: "Specialized care and support for scoliosis management and spinal alignment.",
+    href: "/services#family-care",
+  },
+  {
+    icon: Heart,
+    title: "Arthritis Care",
+    description: "Gentle, effective treatment for arthritis pain, stiffness, and improved joint function.",
+    href: "/services#pain-relief",
+  },
+  {
+    icon: Users,
+    title: "Family Care",
+    description: "Comprehensive chiropractic care for the whole family, from children to seniors.",
+    href: "/services#family-care",
+  },
+  {
+    icon: Star,
+    title: "Lifestyle Care",
+    description: "Wellness-focused care including nutrition, exercise, and healthy habit coaching.",
+    href: "/services#family-care",
+  },
+  {
+    icon: Target,
+    title: "AllCore 360",
+    description: "Comprehensive core strengthening and stabilization programs for better function.",
+    href: "/services",
+  },
+  {
+    icon: FileText,
+    title: "Handicap Parking Exams",
+    description: "Medical evaluations and documentation for handicap parking permit applications.",
+    href: "/services",
+  },
+  {
+    icon: FileText,
+    title: "Expert Services",
+    description: "Expert testimony, injury causation analysis, and professional documentation services.",
+    href: "/services#impairment-ratings",
+  },
+  {
+    icon: FileText,
+    title: "Impairment Ratings",
+    description: "Professional impairment and disability ratings for legal or insurance purposes.",
+    href: "/services#impairment-ratings",
+  },
+  {
+    icon: User,
+    title: "Kids, Teens and Athletes",
+    description: "Age-appropriate chiropractic care for children, teenagers, and young athletes.",
+    href: "/services#family-care",
+  },
+  {
     icon: UserCheck,
-    title: "Posture & Wellness Care",
-    description: "Preventive care and lifestyle guidance to maintain spinal health and overall well-being.",
-    href: "/services#posture",
+    title: "Adult Care",
+    description: "Comprehensive chiropractic care tailored for adults and working professionals.",
+    href: "/services#family-care",
+  },
+  {
+    icon: Heart,
+    title: "Special Care for Older Patients",
+    description: "Gentle, specialized care designed for seniors and age-related health concerns.",
+    href: "/services#family-care",
+  },
+  {
+    icon: Bone,
+    title: "Traditional Adjustments",
+    description: "Classic chiropractic adjustments to restore proper alignment and function.",
+    href: "/services#family-care",
+  },
+  {
+    icon: TrendingUp,
+    title: "Strengthening & Stretching",
+    description: "Therapeutic exercises and stretching programs to improve mobility and strength.",
+    href: "/services#family-care",
+  },
+  {
+    icon: GraduationCap,
+    title: "Healthy Habits",
+    description: "Education and coaching on nutrition, posture, ergonomics, and lifestyle wellness.",
+    href: "/services#family-care",
+  },
+  {
+    icon: Heart,
+    title: "Gentle Pregnancy Chiropractic",
+    description: "Safe, gentle chiropractic care designed specifically for expectant mothers.",
+    href: "/services#family-care",
+  },
+  {
+    icon: Activity,
+    title: "Light Force Adjustments",
+    description: "Gentle, low-force techniques for patients who prefer not to be 'cracked'.",
+    href: "/services#family-care",
+  },
+  {
+    icon: Stethoscope,
+    title: "Patients Post Surgery or Injections",
+    description: "Specialized care for patients recovering from surgery or post-injection treatment.",
+    href: "/services#family-care",
   },
 ];
 
@@ -67,7 +177,8 @@ export function ServicesSection() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <Link
-                to={service.href}
+                href={service.href}
+                scroll={true}
                 className="group block bg-card rounded-2xl p-8 shadow-soft hover:shadow-card border border-border/50 hover:border-primary/30 transition-all duration-300 h-full"
               >
                 <div className="h-12 w-12 rounded-xl bg-sage-light flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
@@ -94,7 +205,7 @@ export function ServicesSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <Link to="/services">
+          <Link href="/services">
             <Button variant="default" size="lg">
               View All Services
               <ArrowRight className="h-4 w-4" />

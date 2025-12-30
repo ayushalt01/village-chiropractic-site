@@ -1,25 +1,26 @@
+"use client";
+
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { Star, Quote, ArrowRight } from "lucide-react";
+import { Star, Quote } from "lucide-react";
+import { GoogleReviewsWidget } from "./GoogleReviewsWidget";
 
 const testimonials = [
   {
-    name: "Aniece P.",
-    location: "Stone Mountain, GA",
-    text: "Dr. Connelly, Dr. Dumas, and the wonderful staff - hats off to all of you! My total experience has been wonderful, and I highly recommend this facility for excellent care. This is the place!",
+    name: "Sarah M.",
+    location: "Stone Mountain",
+    text: "After years of chronic back pain, I finally found relief at Pain Atlanta. Dr. Connelly took the time to understand my issues and created a plan that actually worked. I can finally play with my kids again!",
     rating: 5,
   },
   {
-    name: "Netasha",
-    location: "Stone Mountain, GA",
-    text: "Great first visit! Dr. Connelly and his staff are amazing. The treatment and adjustments were right on point, and they took the time to listen to my concerns without rushing me.",
+    name: "James T.",
+    location: "Decatur",
+    text: "I was in a car accident and was referred to Pain Atlanta. The staff was so caring and professional. They helped me through the entire recovery process and even handled the insurance paperwork.",
     rating: 5,
   },
   {
-    name: "Yvette P.",
-    location: "Stone Mountain, GA",
-    text: "I highly recommend Village Chiropractor for great care from head to toe. Both doctors are great, and the staff is wonderful too, especially Amanda and Sherri. You will definitely not regret it!",
+    name: "Linda K.",
+    location: "Stone Mountain",
+    text: "As a senior, I was hesitant about chiropractic care, but the doctors use such gentle techniques. I feel more mobile and have less stiffness than I have in years. Highly recommend!",
     rating: 5,
   },
 ];
@@ -45,7 +46,13 @@ export function TestimonialsSection() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
+        {/* Google Reviews Widget */}
+        <div className="mb-12">
+          <GoogleReviewsWidget />
+        </div>
+
+        {/* Static Testimonials Fallback */}
+        <div className="grid md:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.name}
@@ -71,21 +78,6 @@ export function TestimonialsSection() {
             </motion.div>
           ))}
         </div>
-
-        <motion.div
-          className="text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-        >
-          <Link to="/testimonials">
-            <Button variant="outline" size="lg">
-              Read More Reviews
-              <ArrowRight className="h-4 w-4" />
-            </Button>
-          </Link>
-        </motion.div>
       </div>
     </section>
   );

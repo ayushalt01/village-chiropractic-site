@@ -1,17 +1,20 @@
+"use client";
+
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Calendar, Phone } from "lucide-react";
-import wellnessBg from "@/assets/wellness-bg.jpg";
 
 export function CTASection() {
   return (
     <section className="relative py-24 overflow-hidden">
       <div className="absolute inset-0">
-        <img
-          src={wellnessBg}
+        <Image
+          src="/assets/wellness-bg.jpg"
           alt=""
-          className="w-full h-full object-cover"
+          fill
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-sage-dark/95 to-sage-dark/90" />
       </div>
@@ -32,7 +35,7 @@ export function CTASection() {
             and discover how chiropractic care can help you feel your best.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link to="/contact">
+            <Link href="/contact">
               <Button variant="hero" size="xl" className="bg-primary-foreground text-sage-dark hover:bg-primary-foreground/90">
                 <Calendar className="h-5 w-5" />
                 Book Your Appointment
