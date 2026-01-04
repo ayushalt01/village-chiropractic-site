@@ -1,9 +1,8 @@
 {
   "extends": "next/core-web-vitals",
-  "ignorePatterns": ["src/pages-old/**", "**/*.old"],
+  "ignorePatterns": ["src/pages-old/**", "**/*.old", ".next/**", "node_modules/**"],
   "rules": {
     "react/no-unescaped-entities": "off",
     "@next/next/no-img-element": "warn"
   }
 }
-
