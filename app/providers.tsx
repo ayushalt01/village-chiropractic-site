@@ -2,7 +2,6 @@
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { useMemo } from "react";
 
 const queryClient = new QueryClient({
   defaultOptions: {

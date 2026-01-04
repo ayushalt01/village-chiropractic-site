@@ -18,9 +18,9 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50">
+    <header className="sticky top-0 z-50 bg-white">
       {/* Top bar */}
-      <div className="bg-primary text-primary-foreground">
+      <div className="bg-white text-foreground border-b border-border/50">
         <div className="container flex items-center justify-between py-2 text-sm">
           <div className="hidden md:flex items-center gap-6">
             <a href="tel:+17704697330" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
@@ -34,13 +34,14 @@ export function Header() {
           </div>
           <div className="flex items-center gap-2 mx-auto md:mx-0">
             <Clock className="h-4 w-4" />
-            <span>Mon-Fri: 9AM-7PM | Sat: 9AM-12PM | Sun: Closed</span>
+            <span className="hidden sm:inline">Mon-Fri: 9AM-7PM | Sat: 9AM-12PM | Sun: Closed</span>
+            <span className="sm:hidden text-xs">Mon-Fri: 9AM-7PM</span>
           </div>
         </div>
       </div>
 
       {/* Main navigation */}
-      <nav className="bg-card/95 backdrop-blur-md border-b border-border shadow-soft">
+      <nav className="bg-white border-b border-border shadow-sm">
         <div className="container flex items-center justify-between py-4">
           <Link href="/" className="flex items-center gap-3">
             <div className="h-12 w-12 rounded-full bg-primary flex items-center justify-center">
@@ -95,7 +96,7 @@ export function Header() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden border-t border-border bg-card"
+              className="lg:hidden border-t border-border bg-white"
             >
               <div className="container py-4 space-y-4">
                 {navigation.map((item) => (
